@@ -9,94 +9,58 @@ console.log(data)
 
 
 
+
+
 ---
-<div class="wrapper">
-    {data.map((item) => {
-        return (
-    <div class="card-container">
+{data.map((item) => {
+    const oldPrice = Math.round(item.price + item.price/10)
+    return (
+<div class=" w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl ">
     
-            <h2 class="card-title">{item.title}</h2>
-            <img class="card-image"src={item.image} alt="">
-            <p class="card-desc">{item.description}</p>
-            <div class="card-price-container">
-            <p class="card-price"> Price : {item.price} $</p>
-            <p class="card-rating"> Rating :{item.rating.rate}</p>
+    <a href="#">
+        <img src={item.image}
+                alt="Product" class="rounded-t-xl image" />
+        <div class="px-4 py-3 w-72">
+            <span class="text-white p-1  mr-3 uppercase text-xs raiting">Rating :{item.rating.rate}</span>
+            <p class="text-lg font-bold text-black truncate block capitalize">{item.title}</p>
+            <div class="flex items-center">
+                <div class="flex items-center">
+                <p class="text-lg font-semibold text-black cursor-auto my-3">$ {item.price}</p>
+                <del>
+                    <p class="text-sm text-gray-600 cursor-auto ml-2">$ {oldPrice}  </p>
+                </del>
             </div>
+                <div class="ml-auto"><button class="detail">
+                <a href={`/products/${item.id}`} > Detail</a>  </button>
+                    </div>
+                
+            </div>
+          
         </div>
-        )
+    </a>
+</div>
+)
     })}
 
-</div>
+    <style>
+        .raiting{
+            background-color: green;
+            border-radius: 5px;
 
+        }
+        .detail{
+            background-color: red;
+            border-radius: 5px;
+            color:white;
+            padding: 3px;
+            
+        }
 
-<style>
-    .wrapper{
-        display: flex;
-        flex-wrap: wrap;
-        gap:20px;
-        padding: 10px 30px;
-        justify-content: center;
-    }
-
-    .card-container{
-        width: 550px;
-        border: 5px solid dodgerblue;
-        background-color: antiquewhite;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        box-shadow: 3px 3px 8px ;
-        transition: all .4s;
-
-
-    }
-    .card-container:hover{
-        transform: scale(1.03);
-        background-color: rgb(240, 234, 225);
-    }
-
-    .card-title{
-        color:dodgerblue;
-        text-align: center;
-        height: 100px;
-
-    }
-
-    .card-image{
-        width:200px;
-        height: 150px;
-        text-align: center;
-    }
-
-    .card-desc{
-        padding: 30px 30px 50px 30px;
-    }
-
-    .card-price-container{
-        display: flex;
-        gap:100px;
-        position: absolute;
-        bottom:0;
-        align-items: center;
-        
-    }
-
-    .card-price{
-        background-color: rgb(36, 163, 36);
-        padding: 10px;
-        color: white;
-        font-weight: bold;
-    }
-
-    .card-rating{
-        background-color: dodgerblue;
-        padding: 10px;
-        color: white;
-        font-weight: bold;
-    }
-
-
+        .image{
+            width: 150px;
+            height: 130px;
+            margin: auto;
+        }
     </style>
 
 

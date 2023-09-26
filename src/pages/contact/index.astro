@@ -1,219 +1,58 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Products from "../../components/Products.astro"
+
+
+
+
 
 ---
 
+<Layout title="First">
+    <section class="bg-white dark:bg-gray-900">
+        <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Contact Us</h2>
+            <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
+            <form action="#" class="space-y-8">
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
+                    <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required>
+                </div>
+                <div>
+                    <label for="subject" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Subject</label>
+                    <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Let us know how we can help you" required>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
+                    <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..."></textarea>
+                </div>
+                <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send message</button>
+            </form>
+        </div>
+      </section>
+
+      <style>
+        form button{
+            background-color:blue;
+        }
+      </style>
 
 
-<Layout >
-    <main>
-        <div class="title">Contact us</div>
-        <div class="title-info">We'll get back to you soon!</div>
+ 
+    
+    
 
-        <form action="" method="" class="form">
-            <div class="input-group">
-                <input type="text" name="first_name" id="first-name" placeholder="First name">
-                <label for="first-name">First name</label>
-            </div>
-            
-            <div class="input-group">
-                <input type="text" name="last_name" id="last-name" placeholder="Last Name">
-                <label for="last-name">Last name</label>
-            </div>
 
-            <div class="input-group">
-                <input type="email" name="e-mail" id="e-mail" placeholder="e-mail">
-                <label for="e-mail">e-mail</label>
-            </div>
 
-            <div class="textarea-group">
-                <textarea name="message" id="message" rows="5" placeholder="Message"></textarea>
-                <label for="message">Message</label>
-            </div>
 
-            <div class="button-div">
-                <button type="submit">Send</button>
-            </div>
-        </form>
-    </main>
+
+
+
+
+
 </Layout>
 
-<style>
-    main
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-    margin: auto;
-}
-
-.title
-{
-    font-size: 50px;
-    font-weight: bold;
-    padding: 1.5% 0;
-    color:dodgerblue
-}
-
-.title-info
-{
-	padding-bottom: 2%;
-}
-
-.form
-{
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    padding: 2%;
-}
-
-.input-group, .textarea-group
-{
-    padding: 1% 0;
-}
-
-input, textarea
-{
-    color: inherit;
-    width: 100%;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #757575;
-    padding: 1.5%;
-    font-size: 30px;
-}
-
-input:focus, textarea:focus
-{
-    background-color: transparent;
-    outline: transparent;
-    border-bottom: 2px solid dodgerblue;
-}
-
-input::placeholder, textarea::placeholder
-{
-    color: transparent;
-}
-
-label
-{
-    color: #757575;
-    position: relative;
-    left: 0.5em;
-    top: -2em;
-	cursor: auto;
-    transition: 0.3s ease all;
-}
-
-input:focus ~ label, input:not(:placeholder-shown) ~ label
-{
-    top: -4em;
-    color: dodgerblue;
-    font-size: 15px;
-}
-
-textarea:focus ~ label, textarea:not(:placeholder-shown) ~ label
-{
-    top: -10.5em;
-    color: dodgerblue;
-    font-size: 15px;
-}
-
-.button-div
-{
-    display: flex;
-    justify-content: center;
-}
-
-button
-{
-    padding: 2%;
-    width: 50%;
-    border: 1px solid;
-    border-color: #212121;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 18px;
-    background-color: black;
-    color: white;
-    box-shadow: 0 0 10px #212121;
-    margin: 10px;
-
-}
-
-button:hover
-{
-    background-color: #424242;
-    color: red;
-    cursor: pointer;
-}
 
 
-/* Media queries */
 
-@media screen and (max-width: 1200px)
-{
-    .form
-    {
-        width: 70%;
-    }
-}
 
-@media screen and (max-width: 680px)
-{
-    .form
-    {
-		width: 90%;
-    }
-}
-
-@media screen and (max-width: 500px)
-{
-	.title
-	{
-		font-size: 40px;
-		padding-top: 6%;
-	}
-
-	.title-info
-	{
-		font-size: 13px;
-	}
-	
-	.form
-	{
-		padding: 6% 4%;
-		padding-top: 15%;
-	}
-
-	.input-group, .textarea-group
-    {
-		padding: 3% 0;
-	}
-	
-	input, textarea
-	{
-		font-size: 15px;
-	}
-
-	input:focus ~ label, input:not(:placeholder-shown) ~ label
-	{
-		top: -3.5em;
-		left: 0.1em;
-	}
-	
-	textarea:focus ~ label, textarea:not(:placeholder-shown) ~ label
-	{
-		top: -8.5em;
-		left: 0.2em;
-    }
-    
-    button
-    {
-        font-size: 15px;
-    }
-}
-</style>

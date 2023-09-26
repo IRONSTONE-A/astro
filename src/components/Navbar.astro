@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 
 const menu = [
 { url: "/products", text: "Products" },
+{ url: "/categories", text: "Categories" },
   { url: "/contact", text: "Contacts" },
   { url: "/about", text: "About" },
   
@@ -21,14 +22,32 @@ const menu = [
       
        </a>
     
-    <ul > 
-        {menu.map(item => 
+    <ul class="menu-list"> 
+         
             <li class="link">
-                <a  href={item.url}>{item.text}</a>
+                <a  href="/products">Products</a>
             </li>
-        )}
+            <li class="link dropdown-link">
+                <a  href="#">Categories</a>
+                <div class="dropdown">
+                    <a href="/woman">Woman</a>
+                    <a href="/man">Man</a>
+                    <a href="/electronic">Electronic</a>
+                    <a href="/jewelery">Jewelery</a>
+                </div>
+            </li>
+            <li class="link">
+                <a  href="/contact">Contact</a>
+            </li>
+            <li class="link">
+                <a  href="/about">About</a>
+            </li>
+       
       </ul>
   </nav>
+  
+
+  
 </header>
 
 <style>
@@ -37,7 +56,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    background-color: lightgrey;
+    background-color: rgb(248, 244, 244);
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -69,10 +88,55 @@ li a:hover{
    
     color: red;
 }
+.dropdown-link{
+    position: relative;
+}
+
+.dropdown-link:hover .dropdown{
+    display: block;
+    padding: 5px;
+}
+.dropdown{
+    position: absolute;
+    left:20px;
+    top:30px;
+    display: none;
+    
+    
+}
+
+.dropdown a:hover{
+    color:green
+}
+
+.dropdown a {
+    
+    
+    display: block;
+   color: crimson;
+   font-size: 16px;
+   border-bottom: 1px solid grey;
+   
+   
+
+}
 
 @media only screen and (max-width:500px){
 nav{
     flex-direction:column;
+    
+}
+
+.menu-list{
+    display: flex;
+    flex-direction: column;
+}
+.dropdown{
+    background-color: aliceblue;
+    position: absolute;
+    left:110px;
+    top:5px;
+    /* display: none; */
     
 }
 }
